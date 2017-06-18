@@ -10,7 +10,7 @@ public class AI {
     public ArrayList<User> findMatch(User user, ArrayList<User> users) {
         ArrayList<User> availableUsers = new ArrayList<>();
         for (User candidate : users) {
-            if(candidate.isFree())
+            if(candidate.isFree() && candidate != user)
                 availableUsers.add(candidate);
         }
 

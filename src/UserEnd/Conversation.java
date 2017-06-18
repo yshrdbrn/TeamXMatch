@@ -45,12 +45,12 @@ public class Conversation {
 
             System.out.println("Are you done playing?");
             inputStr = input.next();
-            if(inputStr.equals("Yes"))
+            if(inputStr.equalsIgnoreCase("Yes"))
                 Engine.changeUserStatus(user, true);
             review();
             System.out.println("Do you want to play another match?");
             inputStr = input.next();
-            if(inputStr.equals("No"))
+            if(inputStr.equalsIgnoreCase("No"))
                 break;
 
         }
