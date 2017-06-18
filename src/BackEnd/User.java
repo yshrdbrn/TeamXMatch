@@ -11,16 +11,21 @@ public class User {
     private String lastName;
     private int socialness;
     private int howOftenUserPlaysPerWeek;
-    private ArrayList<Integer> vector;
+    private ArrayList<Double> vector;
     private double dotProductResult;
     private int ID;
     private boolean isFree;
     private HashMap<Integer, Integer> numberGamesPlayedWithPlayer;
 
+    private double rating;
+    private double gamesPlayed;
+
     public User() {
         vector = new ArrayList<>();
         isFree = false;
         numberGamesPlayedWithPlayer = new HashMap<>();
+        rating = 0;
+        gamesPlayed = 0;
     }
 
 
@@ -42,7 +47,7 @@ public class User {
         return socialness;
     }
 
-    public ArrayList<Integer> getVector() {
+    public ArrayList<Double> getVector() {
         return vector;
     }
     public int getHowOftenUserPlaysPerWeek(){
@@ -86,11 +91,14 @@ public class User {
 
     //Methods
 
-    public void calculateVector() {
-        //TODO
+    public void calculateVector(User otherUser) {
+        vector.add((double) socialness);
+        vector.add((double) howOftenUserPlaysPerWeek);
+        vector.add((double) numberGamesPlayedWithPlayer.get(otherUser.getID()));
+        vector.add(rating);
     }
 
-    public void calculateDotProduct(ArrayList<Integer> anotherVector) {
+    public void calculateDotProduct(ArrayList<Double> anotherVector) {
         double result = 0;
         for (int i = 0; i < vector.size(); i++) {
             result += vector.get(i) * anotherVector.get(i);

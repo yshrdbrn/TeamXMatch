@@ -27,7 +27,7 @@ public class AI {
 
         ArrayList<User> temp = new ArrayList<>();
         for (User availableUser : availableUsers) {
-            availableUser.calculateVector();
+            availableUser.calculateVector(chosenPeople.get(chosenPeople.size() - 1));
             availableUser.calculateDotProduct(chosenPeople.get(chosenPeople.size() - 1).getVector());
         }
 
