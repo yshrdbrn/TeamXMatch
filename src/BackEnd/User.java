@@ -10,7 +10,7 @@ public class User {
     private String firstName;
     private String lastName;
     private int socialness;
-    private int howOften;
+    private int howOftenUserPlaysPerWeek;
     private ArrayList<Integer> vector;
     private double dotProductResult;
     private int ID;
@@ -45,8 +45,8 @@ public class User {
     public ArrayList<Integer> getVector() {
         return vector;
     }
-    public int getHowOften(){
-        return howOften;
+    public int getHowOftenUserPlaysPerWeek(){
+        return howOftenUserPlaysPerWeek;
     }
     public String getFirstName(){
         return firstName;
@@ -77,8 +77,11 @@ public class User {
         this.lastName = lastName;
         System.out.println("Hello " + firstName + " " + lastName);
     }
-    public void setHowOften(int howOften ){
-        this.howOften = howOften;
+    public void setHowOftenUserPlaysPerWeek(int howOftenUserPlaysPerWeek ){
+        this.howOftenUserPlaysPerWeek = howOftenUserPlaysPerWeek;
+    }
+    public void setSocialness(int socialness){
+        this.socialness = socialness;
     }
 
     //Methods
