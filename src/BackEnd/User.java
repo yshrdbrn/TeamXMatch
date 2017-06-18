@@ -10,8 +10,7 @@ public class User {
     private String firstName;
     private String lastName;
     private int socialness;
-    private int nbTimes;
-    private boolean isValid;
+    private int howOften;
     private ArrayList<Integer> vector;
     private int ID;
     private boolean isFree;
@@ -45,6 +44,15 @@ public class User {
     public ArrayList<Integer> getVector() {
         return vector;
     }
+    public int getHowOften(){
+        return howOften;
+    }
+    public String getFirstName(){
+        return firstName;
+    }
+    public String getLastName(){
+        return lastName;
+    }
 
     //Setters
 
@@ -64,8 +72,8 @@ public class User {
         this.lastName = lastName;
         System.out.println("Hello " + firstName + " " + lastName);
     }
-    public void setNbTimes(int nbTimes ){
-        this.nbTimes = nbTimes;
+    public void setHowOften(int howOften ){
+        this.howOften = howOften;
     }
 
     //Methods
