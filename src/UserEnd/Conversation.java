@@ -33,7 +33,7 @@ public class Conversation {
         Engine.changeUserStatus(user, false);
 
         String inputStr;
-        while (true) {
+        while (true) {  // as long as the player in willing to play this loop will execute.
             System.out.println("\n\nFinding you a match...");
             otherPlayers = Engine.findMatch(user);
             System.out.println("Here are your teammates!");
@@ -56,6 +56,9 @@ public class Conversation {
         }
     }
 
+    /**
+     * asking users the review about their teammates.
+     */
     private void review() {
         double rating;
         System.out.println("So what do you think about your teammates?\nGive them rating from 1 to 5\n");
