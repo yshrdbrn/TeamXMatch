@@ -7,7 +7,7 @@ public class RandomUser {
 	public RandomUser(){
 	    randomUser = new User();
 
-	    // generating random of some instance variables in class User in order to build a dataset
+
 		String firstNameRand = generateString("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz", 10);
 		String lastNameRand = generateString("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz", 10);
 		int IDRand = generateInt(1, 10);
@@ -21,7 +21,12 @@ public class RandomUser {
 		randomUser.setHowOftenUserPlaysPerWeek(howOftenUserPlaysPerWeekRand);
 		randomUser.setSocialness(socialnessRand);
 	}
-	
+		/**
+		 * Since we don't have a actual case to study on we need to generate random names.
+		 * Generating a random string in order to store it as either first name or last name for dataset.
+		 * @param characters is a string that we will choose characters from.
+		 * @param length is the length of the random string that generator is supposed to give us.
+		 */
 	public static String generateString(String characters, int length){
 		Random rand = new Random();
 		char[] text = new char[length];
