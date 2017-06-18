@@ -31,4 +31,13 @@ public class Engine {
     public static void addUser(User user) {
         dataSet.addNewUser(user);
     }
+
+    public static void addRatingToUser(User user, double rating) {
+        user.updateRating(rating);
+    }
+
+    public static void addGamesPlayed(User user, User player) {
+        user.updateNumberOfGamesPlayedTogether(player);
+        player.updateNumberOfGamesPlayedTogether(user);
+    }
 }

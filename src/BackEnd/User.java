@@ -31,10 +31,6 @@ public class User {
 
     //Getters
 
-//    public String getName() {
-//        return name;
-//    }
-
     public int getID() {
         return ID;
     }
@@ -43,19 +39,14 @@ public class User {
         return isFree;
     }
 
-    public int getSocialness(){
-        return socialness;
-    }
-
     public ArrayList<Double> getVector() {
         return vector;
     }
-    public int getHowOftenUserPlaysPerWeek(){
-        return howOftenUserPlaysPerWeek;
-    }
+
     public String getFirstName(){
         return firstName;
     }
+
     public String getLastName(){
         return lastName;
     }
@@ -64,11 +55,8 @@ public class User {
         return dotProductResult;
     }
 
-    //Setters
 
-//    public void setName(String name) {
-//        this.name = name;
-//    }
+    //Setters
 
     public void setID(int ID) {
         this.ID = ID;
@@ -89,12 +77,18 @@ public class User {
         this.socialness = socialness;
     }
 
+
     //Methods
 
     public void calculateVector(User otherUser) {
         vector.add((double) socialness);
         vector.add((double) howOftenUserPlaysPerWeek);
-        vector.add((double) numberGamesPlayedWithPlayer.get(otherUser.getID()));
+
+        if (numberGamesPlayedWithPlayer.get(otherUser.getID()) != null)
+            vector.add((double) numberGamesPlayedWithPlayer.get(otherUser.getID()));
+        else
+            vector.add(0.0);
+
         vector.add(rating);
     }
 
@@ -105,5 +99,18 @@ public class User {
         }
 
         dotProductResult = result;
+    }
+
+    public void updateRating(double rating) {
+        this.rating = ( this.rating * gamesPlayed  +  rating ) / (gamesPlayed + 1);
+        gamesPlayed++;
+    }
+
+    public void updateNumberOfGamesPlayedTogether(User otherPlayer) {
+        Integer num = numberGamesPlayedWithPlayer.get(otherPlayer.getID());
+        if (num != null)
+            numberGamesPlayedWithPlayer.put(otherPlayer.getID(), num + 1);
+        else
+            numberGamesPlayedWithPlayer.put(otherPlayer.getID(), 1);
     }
 }

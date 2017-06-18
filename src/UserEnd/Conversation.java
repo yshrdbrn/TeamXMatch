@@ -10,9 +10,13 @@ import java.util.Scanner;
  */
 public class Conversation {
 
+    private ArrayList<User> otherPlayers;
+    private Scanner input;
+    private User user;
+
     public void startConversation() {
-        User user = new User();
-        Scanner input = new Scanner(System.in);
+        user = new User();
+        input = new Scanner(System.in);
         System.out.println("What is your first name?");
         String firstName = input.next();
         System.out.println("What is your last name?");
@@ -31,7 +35,7 @@ public class Conversation {
         String inputStr;
         while (true) {
             System.out.println("\n\nFinding you a match...");
-            ArrayList<User> otherPlayers = Engine.findMatch(user);
+            otherPlayers = Engine.findMatch(user);
             System.out.println("Here are your teammates!");
             for (User player : otherPlayers) {
                 System.out.println(player.getFirstName() + " " + player.getLastName());
@@ -53,6 +57,15 @@ public class Conversation {
     }
 
     private void review() {
+        double rating;
+        System.out.println("So what do you think about your teammates?\nGive them rating from 1 to 5\n");
+        for (User player : otherPlayers) {
+            System.out.println(player.getFirstName() + " " + player.getLastName());
+            rating = input.nextInt();
+            Engine.addRatingToUser(player, rating);
+
+            Engine.addGamesPlayed(user, player);
+        }
     }
 
 }
