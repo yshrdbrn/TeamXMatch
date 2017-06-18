@@ -27,7 +27,7 @@ public class AI {
 
         ArrayList<User> temp = new ArrayList<>();
         for (User availableUser : availableUsers) {
-            availableUser.calculateVector();
+            availableUser.calculateVector(chosenPeople.get(chosenPeople.size() - 1));
             availableUser.calculateDotProduct(chosenPeople.get(chosenPeople.size() - 1).getVector());
         }
 
@@ -37,8 +37,18 @@ public class AI {
 
         if ( (chosenPeople.size() + availableUsers.size()/5 ) > 5 ) {
             for (int i = 0; i < availableUsers.size() / 5; i++) {
-                availableUsers
+                temp.add(availableUsers.get(i));
             }
+            return findBestPeople(chosenPeople, temp);
+        }
+        else {
+            int count = 0;
+            while (chosenPeople.size() < 5) {
+                chosenPeople.add(availableUsers.get(count));
+                count++;
+            }
+
+            return chosenPeople;
         }
     }
 }
