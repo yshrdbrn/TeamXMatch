@@ -5,8 +5,10 @@ public class RandomUser {
 	private User randomUser;
 	
 	public RandomUser(){
-		String firstNameRand = generateString("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz", 100);
-		String lastNameRand = generateString("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz", 100);
+	    randomUser = new User();
+
+		String firstNameRand = generateString("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz", 10);
+		String lastNameRand = generateString("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz", 10);
 		int IDRand = generateInt(1, 10);
 		boolean freeRand = generateBoolean();
 		int howOftenUserPlaysPerWeekRand = generateInt(1,10);
@@ -36,5 +38,9 @@ public class RandomUser {
 		Random rand = new Random();
 		boolean result = rand.nextBoolean();
 		return result;
+	}
+
+	public User getUser() {
+		return randomUser;
 	}
 }

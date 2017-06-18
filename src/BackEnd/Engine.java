@@ -13,11 +13,16 @@ public class Engine {
     private static Conversation conversation;
 
     public static void main(String[] args) {
+        RandomUser rand1 = new RandomUser();
+        RandomUser rand2 = new RandomUser();
+        System.out.println(rand1.getUser() + "\n\n" + rand2.getUser());
+
         ai = new AI();
         dataSet = new DataSet();
         conversation = new Conversation();
 
         conversation.startConversation();
+
     }
 
     public static ArrayList<User> findMatch(User user) {

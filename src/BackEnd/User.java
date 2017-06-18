@@ -113,4 +113,14 @@ public class User {
         else
             numberGamesPlayedWithPlayer.put(otherPlayer.getID(), 1);
     }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", socialness=" + socialness +
+                ", howOftenUserPlaysPerWeek=" + howOftenUserPlaysPerWeek +
+                '}';
+    }
 }
