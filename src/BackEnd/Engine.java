@@ -17,7 +17,7 @@ public class Engine {
         dataSet = new DataSet();
         conversation = new Conversation();
 
-        //TODO
+        conversation.startConversation();
     }
 
     public static ArrayList<User> findMatch(User user) {
