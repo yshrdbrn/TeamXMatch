@@ -14,8 +14,12 @@ class DataSet {
         users = new ArrayList<>();
     }
 
+    /**
+     * Adds a new user to the data set
+     * @param user the person who we need to add
+     */
     void addNewUser(User user) {
-        user.setID(userIDCounter++);
+        user.setID(userIDCounter++); //Assigning ID to the given user
         users.add(user);
     }
 
