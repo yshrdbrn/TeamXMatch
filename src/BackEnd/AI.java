@@ -14,13 +14,31 @@ public class AI {
                 availableUsers.add(candidate);
         }
 
+        ArrayList<User> input = new ArrayList<>();
+        input.add(user);
+        ArrayList<User> finalList = findBestPeople(input, availableUsers);
+        finalList.remove(0);
+        return finalList;
+    }
+
+    private ArrayList<User> findBestPeople(ArrayList<User> chosenPeople, ArrayList<User> availableUsers) {
+        if (chosenPeople.size() >= 5)
+            return chosenPeople;
+
+        ArrayList<User> temp = new ArrayList<>();
         for (User availableUser : availableUsers) {
             availableUser.calculateVector();
-            availableUser.calculateDotProduct(user.getVector());
+            availableUser.calculateDotProduct(chosenPeople.get(chosenPeople.size() - 1).getVector());
         }
 
-        Collections.sort(availableUsers, (a, b) -> (int)(a.getDotProductResult() - a.getDotProductResult()));
+        Collections.sort(availableUsers, (a, b) -> (int)(b.getDotProductResult() - a.getDotProductResult()));
+        chosenPeople.add(availableUsers.get(0));
+        availableUsers.remove(0);
 
-        return null; //TODO
+        if ( (chosenPeople.size() + availableUsers.size()/5 ) > 5 ) {
+            for (int i = 0; i < availableUsers.size() / 5; i++) {
+                availableUsers
+            }
+        }
     }
 }
