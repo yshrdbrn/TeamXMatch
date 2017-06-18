@@ -14,6 +14,7 @@ public class AI {
                 availableUsers.add(candidate);
         }
 
+
         ArrayList<User> input = new ArrayList<>();
         input.add(user);
         ArrayList<User> finalList = findBestPeople(input, availableUsers);
@@ -28,6 +29,7 @@ public class AI {
         ArrayList<User> temp = new ArrayList<>();
         for (User availableUser : availableUsers) {
             availableUser.calculateVector(chosenPeople.get(chosenPeople.size() - 1));
+            chosenPeople.get(chosenPeople.size() - 1).calculateVector(availableUser);
             availableUser.calculateDotProduct(chosenPeople.get(chosenPeople.size() - 1).getVector());
         }
 

@@ -65,10 +65,10 @@ public class User {
     public void setFree(boolean free) {
         isFree = free;
     }
+
     public void setName(String firstName,String lastName){
         this.firstName = firstName;
         this.lastName = lastName;
-        System.out.println("Hello " + firstName + " " + lastName);
     }
     public void setHowOftenUserPlaysPerWeek(int howOftenUserPlaysPerWeek ){
         this.howOftenUserPlaysPerWeek = howOftenUserPlaysPerWeek;
@@ -93,6 +93,7 @@ public class User {
     }
 
     public void calculateDotProduct(ArrayList<Double> anotherVector) {
+  //      System.out.println(this.vector.size() + "     "  + anotherVector.size());
         double result = 0;
         for (int i = 0; i < vector.size(); i++) {
             result += vector.get(i) * anotherVector.get(i);
