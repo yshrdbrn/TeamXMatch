@@ -3,11 +3,11 @@ package BackEnd;
 import java.util.ArrayList;
 
 /**
- * Created by yashardabiran on 2017-06-17.
+ * Class used to store all the data needed for the Back-end
  */
 public class DataSet {
     private ArrayList<User> users;
-    private int userIDCounter;
+    private int userIDCounter; //A counter for specifying a user an ID
 
     public DataSet() {
         userIDCounter = 1;
