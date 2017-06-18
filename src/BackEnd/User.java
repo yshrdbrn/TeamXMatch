@@ -1,5 +1,6 @@
 package BackEnd;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 
 /**
@@ -11,13 +12,13 @@ public class User {
     private int socialness;
     private int nbTimes;
     private boolean isValid;
-    private UserVector vector;
+    private ArrayList<Integer> vector;
     private int ID;
     private boolean isFree;
     private HashMap<Integer, Integer> numberGamesPlayedWithPlayer;
 
     public User() {
-        vector = new UserVector();
+        vector = new ArrayList<>();
         isFree = false;
         numberGamesPlayedWithPlayer = new HashMap<>();
     }
@@ -36,12 +37,13 @@ public class User {
     public boolean isFree() {
         return isFree;
     }
+
     public int getSocialness(){
         return socialness;
     }
-    public boolean isValid(){
-        if(socialness>10 || socialness<0)
-            return false;
+
+    public ArrayList<Integer> getVector() {
+        return vector;
     }
 
     //Setters
@@ -68,7 +70,7 @@ public class User {
 
     //Methods
 
-    public void calculateVector() {
+    public void calculateVector(ArrayList<Integer> anotherVector) {
         //TODO
     }
 }
