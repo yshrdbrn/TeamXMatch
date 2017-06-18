@@ -5,11 +5,11 @@ import java.util.ArrayList;
 /**
  * Class used to store all the data needed for the Back-end
  */
-public class DataSet {
+class DataSet {
     private ArrayList<User> users;
     private int userIDCounter; //A counter for specifying a user an ID
 
-    public DataSet() {
+    DataSet() {
         userIDCounter = 1;
         users = new ArrayList<>();
     }
@@ -19,7 +19,7 @@ public class DataSet {
         users.add(user);
     }
 
-    public ArrayList<User> getUsers() {
+    ArrayList<User> getUsers() {
         return users;
     }
 }
