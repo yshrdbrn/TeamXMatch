@@ -7,6 +7,7 @@ public class RandomUser {
 	public RandomUser(){
 	    randomUser = new User();
 
+	    // generating random of some instance variables in class User in order to build a dataset
 		String firstNameRand = generateString("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz", 10);
 		String lastNameRand = generateString("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz", 10);
 		int IDRand = generateInt(1, 10);
