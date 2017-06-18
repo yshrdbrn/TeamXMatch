@@ -15,10 +15,8 @@ public class DataSet {
     }
 
     void addNewUser(User user) {
-        User userToAdd = new User(user, userIDCounter);
-        userIDCounter++;
-
-        users.add(userToAdd);
+        user.setID(userIDCounter++);
+        users.add(user);
     }
 
     public ArrayList<User> getUsers() {

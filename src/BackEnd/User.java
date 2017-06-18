@@ -55,6 +55,10 @@ public class User {
         return lastName;
     }
 
+    public double getDotProductResult() {
+        return dotProductResult;
+    }
+
     //Setters
 
 //    public void setName(String name) {
