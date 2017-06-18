@@ -12,6 +12,7 @@ public class User {
     private int socialness;
     private int howOften;
     private ArrayList<Integer> vector;
+    private double dotProductResult;
     private int ID;
     private boolean isFree;
     private HashMap<Integer, Integer> numberGamesPlayedWithPlayer;
@@ -78,7 +79,16 @@ public class User {
 
     //Methods
 
-    public void calculateVector(ArrayList<Integer> anotherVector) {
+    public void calculateVector() {
         //TODO
+    }
+
+    public void calculateDotProduct(ArrayList<Integer> anotherVector) {
+        double result = 0;
+        for (int i = 0; i < vector.size(); i++) {
+            result += vector.get(i) * anotherVector.get(i);
+        }
+
+        dotProductResult = result;
     }
 }
