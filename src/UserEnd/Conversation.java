@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
- * Created by yashardabiran on 2017-06-17.
+ * Since we don't have an interface for our application, the front-end starts here and the user will be asked for input.
  */
 public class Conversation {
 
